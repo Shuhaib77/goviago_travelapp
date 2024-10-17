@@ -1,8 +1,9 @@
-import { Input } from "@material-tailwind/react";
+import { Input ,Button} from "@material-tailwind/react";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useFormik } from "formik";
+
 
 
 function Login() {
@@ -17,6 +18,9 @@ function Login() {
       password:"",
       confirmpassword:""
     },
+    onSubmit:async(values)=>{
+      
+    }
 
 
 
@@ -36,6 +40,7 @@ function Login() {
           </div>
           <div className="mb-5 mt-5 3 w-[60vh] mr-5 ml-5 ">
             <h1 className="text-center text-3xl font-bold mb-8 text-white ">Login</h1>
+            <form onSubmit={handleSubmit}>
             <div className="mb-5">
               {" "}
               <Input className="mb-5 text-white "  label="mail" onChange={handleChange} onBlur={handleBlur} value={values.email} id="email"></Input>
@@ -53,6 +58,10 @@ function Login() {
               {" "}
               <Input className="mb-5 text-white " label="confirmpassword" onChange={handleChange} onBlur={handleBlur} value={values.confirmpassword} id="confirmpassword" ></Input>
             </div>
+            <div>
+              <Button type="submit">Log In</Button>
+            </div>
+            </form>
           </div>
         </div>
       </div>
